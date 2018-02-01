@@ -1,0 +1,12 @@
+<div>
+    <p>This is a paragraph with {{ foo }}</p>
+    <ul>
+        {% for item in items %}
+            <li class="{{ {
+                base: 'item',
+                'item--first': loop.index == 1,
+                'item--last': loop.index == (items | length)
+            } | classes }}">{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
